@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-"""Django's command-line utility for administrative tasks."""
 import os
 import sys
 
@@ -8,10 +6,8 @@ from dotenv import load_dotenv
 
 def main():
     """Run administrative tasks."""
-    # 1. Load .env before anything else
     load_dotenv()
 
-    # 2. Point to the settings in your music_project folder
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "music_project.settings")
 
     try:
@@ -23,7 +19,6 @@ def main():
             "forget to activate a virtual environment?"
         ) from exc
 
-    # 3. Wrap in a broad try/except to catch silent crashes
     try:
         execute_from_command_line(sys.argv)
     except Exception as e:
