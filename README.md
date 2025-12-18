@@ -24,7 +24,7 @@ This project is optimized for **fast reads** (searching songs) and **instant use
 ```text
 vivProMusic/
 ├── manage.py
-├── playlist.json               # Source data (columnar JSON)
+├── data.json               # Source data (columnar JSON)
 ├── requirements.txt
 ├── music_project/              # Project core
 │   ├── __init__.py             # Loads Celery app
