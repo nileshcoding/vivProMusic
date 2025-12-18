@@ -2,7 +2,7 @@ from rest_framework import mixins, permissions, status, viewsets
 from rest_framework.response import Response
 
 from ..models.music import Rating
-from ..serializers.rating_serializers import RatingSerializer
+from ..serializers.rating import RatingSerializer
 from ..tasks import update_music_rating_stats
 
 

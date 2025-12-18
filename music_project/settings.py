@@ -12,6 +12,9 @@ DEBUG = os.getenv("DEBUG", "False") == "True"
 STATIC_URL = "/static/"
 ALLOWED_HOSTS = ["*"]
 
+# Assuming your main folder with urls.py is called 'music_project'
+ROOT_URLCONF = 'music_project.urls'
+
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -39,7 +42,10 @@ DATABASES = {
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
-        "rest_framework_simplejwt.authentication.JSONWebTokenAuthentication",
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
     ),
     "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"],
 }

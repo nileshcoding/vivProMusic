@@ -4,7 +4,7 @@ from rest_framework.filters import OrderingFilter
 
 from ..models.music import Music
 from ..pagination import MusicPagination
-from ..serializers.music_serializers import MusicSerializer
+from ..serializers.music import MusicSerializer
 
 
 class MusicFilter(filters.FilterSet):
